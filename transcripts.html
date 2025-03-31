@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transcripts | FutureTech Academy</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +29,7 @@
         h2 {
             color: #0073e6;
         }
-        .login-form, .request-form {
+        .login-form, .request-form, .transcript {
             margin-top: 20px;
             background: #e6f2ff;
             padding: 20px;
@@ -64,19 +65,40 @@
 <body><header>
     FutureTech Academy - Transcript Access
 </header><div class="container">
-    <h2>Student Login</h2>
+    <h2>Login with MetaMask</h2>
     <div class="login-form">
-        <form>
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required><label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Login</button>
-    </form>
+        <button onclick="connectMetaMask()">Connect MetaMask</button>
+        <p id="wallet-address"></p>
+    </div><div id="transcript-section" class="transcript" style="display:none;">
+    <h2>Unofficial Transcript</h2>
+    <p><strong>Student Name:</strong> <span id="student-name">John Doe</span></p>
+    <p><strong>Program:</strong> <span id="student-program">Future of Humans Track</span></p>
+    <table border="1" width="100%">
+        <tr>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Credits</th>
+        </tr>
+        <tr>
+            <td>Biotechnology</td>
+            <td>A</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Regenerative Biotherapeutics</td>
+            <td>A-</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>3D Bioprinting</td>
+            <td>B+</td>
+            <td>3</td>
+        </tr>
+    </table>
 </div>
 
-<h2>Request Your Transcript</h2>
-<p>Once logged in, you can request an official transcript below. Processing time is typically 5-7 business days.</p>
+<h2>Request Your Official Transcript</h2>
+<p>Once logged in with MetaMask, you can request an official transcript below. Processing time is typically 5-7 business days.</p>
 
 <div class="request-form">
     <form>
@@ -111,5 +133,19 @@
     <p><strong>Address:</strong> 1529 12th St SE, Rochester, MN 55904</p>
 </div>
 
-</div></body>
-  </html>
+</div><script>
+    async function connectMetaMask() {
+        if (typeof window.ethereum !== 'undefined') {
+            try {
+                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                document.getElementById('wallet-address').innerText = `Connected: ${accounts[0]}`;
+                document.getElementById('transcript-section').style.display = 'block';
+            } catch (error) {
+                console.error("User denied account access", error);
+            }
+        } else {
+            alert("MetaMask is not installed. Please install it to continue.");
+        }
+    }
+</script></body>
+</html>
