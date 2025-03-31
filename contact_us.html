@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | FutureTech Academy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0073e6;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #005bb5;
+        }
+        .contact-details {
+            margin-top: 30px;
+        }
+        .contact-details h3 {
+            color: #0073e6;
+        }
+        .contact-details p {
+            margin: 5px 0;
+        }
+        .btn-return {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn-return:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    Contact Us | FutureTech Academy
+</header>
+
+<div class="container">
+    <h2>Get in Touch</h2>
+    <p>If you have any questions or need further assistance, feel free to contact us. We are here to help!</p>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <h3>Contact Form</h3>
+        <form action="submit_contact_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Contact Details -->
+    <div class="contact-details">
+        <h3>Our Location</h3>
+        <p>FutureTech Academy</p>
+        <p>123 FutureTech Street</p>
+        <p>Cityville, ST 12345</p>
+
+        <h3>Phone & Email</h3>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> info@futuretechacademy.edu</p>
+    </div>
+
+    <!-- Return Home Button -->
+    <a href="index.html" class="btn-return">Return Home</a>
+</div>
+
+</body>
+</html>
