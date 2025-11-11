@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,30 +30,28 @@
         h2 {
             color: #0073e6;
         }
-        .login-form, .request-form, .transcript {
+        .login-form, .transcript {
             margin-top: 20px;
             background: #e6f2ff;
             padding: 20px;
             border-radius: 8px;
         }
-        label {
-            font-weight: bold;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
         button {
             background-color: #0073e6;
             color: white;
             border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
             background-color: #005bb5;
+        }
+        iframe {
+            width: 100%;
+            height: 900px;
+            border: none;
+            border-radius: 8px;
         }
         .contact {
             margin-top: 30px;
@@ -62,78 +61,62 @@
         }
     </style>
 </head>
-<body><header>
+<body>
+<header>
     FutureTech Academy - Transcript Access
-</header><div class="container">
+</header>
+
+<div class="container">
     <h2>Login with MetaMask</h2>
     <div class="login-form">
         <button onclick="connectMetaMask()">Connect MetaMask</button>
         <p id="wallet-address"></p>
-    </div><div id="transcript-section" class="transcript" style="display:none;">
-    <h2>Unofficial Transcript</h2>
-    <p><strong>Student Name:</strong> <span id="student-name">John Doe</span></p>
-    <p><strong>Program:</strong> <span id="student-program">Future of Humans Track</span></p>
-    <table border="1" width="100%">
-        <tr>
-            <th>Course</th>
-            <th>Grade</th>
-            <th>Credits</th>
-        </tr>
-        <tr>
-            <td>Biotechnology</td>
-            <td>A</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Regenerative Biotherapeutics</td>
-            <td>A-</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>3D Bioprinting</td>
-            <td>B+</td>
-            <td>3</td>
-        </tr>
-    </table>
+    </div>
+
+    <div id="transcript-section" class="transcript" style="display:none;">
+        <h2>Unofficial Transcript</h2>
+        <p><strong>Student Name:</strong> <span id="student-name">John Doe</span></p>
+        <p><strong>Program:</strong> <span id="student-program">Future of Humans Track</span></p>
+        <table border="1" width="100%">
+            <tr>
+                <th>Course</th>
+                <th>Grade</th>
+                <th>Credits</th>
+            </tr>
+            <tr>
+                <td>Biotechnology</td>
+                <td>A</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Regenerative Biotherapeutics</td>
+                <td>A-</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>3D Bioprinting</td>
+                <td>B+</td>
+                <td>3</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Request Your Official Transcript</h2>
+    <p>Once logged in with MetaMask, you can submit your official transcript request below. Processing time is typically 5–7 business days.</p>
+
+    <!-- Google Form Embed -->
+    <iframe src="YOUR_GOOGLE_FORM_EMBED_URL_HERE"></iframe>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to contact us:</p>
+        <p><strong>Email:</strong> futuretechfoundationx@gmail.com</p>
+        <p><strong>Phone:</strong> 507-596-1049</p>
+        <p><strong>Address:</strong> 221 1st Ave SW, Suite 610, Rochester, MN 55902</p>
+    </div>
 </div>
 
-<h2>Request Your Official Transcript</h2>
-<p>Once logged in with MetaMask, you can request an official transcript below. Processing time is typically 5-7 business days.</p>
-
-<div class="request-form">
-    <form>
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="student-id">Student ID:</label>
-        <input type="text" id="student-id" name="student-id" required>
-
-        <label for="program">Program Enrolled:</label>
-        <select id="program" name="program" required>
-            <option value="Future of Humans Track">Future of Humans Track</option>
-            <option value="BCI and Humanoids Track">BCI and Humanoids Track</option>
-            <option value="Quantum and Space Tech Track">Quantum and Space Tech Track</option>
-        </select>
-
-        <label for="delivery">Delivery Method:</label>
-        <select id="delivery" name="delivery" required>
-            <option value="Email PDF">Email (PDF Copy)</option>
-            <option value="Physical Mail">Physical Mail</option>
-        </select>
-
-        <button type="submit">Submit Request</button>
-    </form>
-</div>
-
-<div class="contact">
-    <h2>Contact Us</h2>
-    <p>If you have any questions, feel free to contact us:</p>
-    <p><strong>Email:</strong> futuretechfoundationx@gmail.com</p>
-    <p><strong>Phone:</strong> 507-295-8561</p>
-    <p><strong>Address:</strong> 1529 12th St SE, Rochester, MN 55904</p>
-</div>
-
-</div><script>
+<script>
     async function connectMetaMask() {
         if (typeof window.ethereum !== 'undefined') {
             try {
@@ -147,5 +130,6 @@
             alert("MetaMask is not installed. Please install it to continue.");
         }
     }
-</script></body>
+</script>
+</body>
 </html>
